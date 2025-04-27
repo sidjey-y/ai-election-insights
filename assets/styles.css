@@ -1,0 +1,309 @@
+:root {
+  --primary-color: #232353;
+  --primary-hover: #6361a4;
+  --positive-color: #36d399;
+  --neutral-color: #4dabf7;
+  --negative-color: #ff6b6b;
+  --background-dark: #0f172a;
+  --background-light: #1e293b;
+  --background-card: #293548;
+  --text-light: #f8fafc;
+  --text-muted: #000000;
+  --border-color: #334155;
+  --shadow-soft: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-medium: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hard: 0 20px 25px rgba(0, 0, 0, 0.1);
+  --transition-quick: all 0.2s ease;
+  --transition-medium: all 0.3s ease;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.app-header {
+  background: linear-gradient(90deg, var(--primary-color), var(--primary-hover));
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  box-shadow: var(--shadow-medium);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  text-align: center;
+}
+
+.app-header p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.card {
+  background-color: var(--background-card);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-quick);
+  color: #000000
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.8rem;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+.graph-container {
+  background-color: var(--background-light);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-quick);
+}
+
+.graph-container:hover {
+  transform: translateY(-5px);
+}
+
+.summary-card {
+  padding: 1.5rem;
+  background-color: var(--background-light);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-soft);
+  flex: 1;
+  min-width: 220px;
+  transition: var(--transition-quick);
+}
+
+.summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium);
+}
+
+.dash-tabs .dash-tab {
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 3px solid transparent;
+  transition: var(--transition-quick);
+}
+
+.dash-tabs .dash-tab--selected {
+  color: var(--primary-color);
+  background-color: transparent;
+  border-bottom: 3px solid var(--primary-color);
+}
+
+.dash-tabs .dash-tab:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.stats-table, .data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.stats-table th, .data-table th {
+  background-color: var(--background-light);
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--text-light);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.stats-table td, .data-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.data-table tr:hover {
+  background-color: rgba(99, 102, 241, 0.05);
+}
+
+button {
+  padding: 0.6rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-quick);
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+}
+
+.secondary-button:hover {
+  background-color: var(--background-card);
+}
+
+.upload-container {
+  border: 2px dashed var(--border-color);
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 1rem;
+  background-color: var(--background-light);
+  cursor: pointer;
+  transition: var(--transition-quick);
+}
+
+.upload-container:hover {
+  border-color: var(--primary-color);
+}
+
+.pulse-animation {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.custom-checkbox input[type="checkbox"] {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--border-color);
+  border-radius: 0.3rem;
+  background-color: var(--background-light);
+  cursor: pointer;
+  margin-right: 0.5rem;
+  position: relative;
+  top: 0.2rem;
+}
+
+.custom-checkbox input[type="checkbox"]:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.custom-checkbox input[type="checkbox"]:checked::before {
+  content: "✓";
+  display: block;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 220px;
+  background-color: var(--background-card);
+  color: var(--text-light);
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -110px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  box-shadow: var(--shadow-medium);
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .app-header {
+    padding: 1.8rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+
+  .summary-card {
+    min-width: 100%;
+    margin-bottom: 0.8rem;
+  }
+}
