@@ -93,40 +93,30 @@ MindThePolls transforms raw student feedback into actionable insights through:
 ## Features and Capabilities
 
 ### Data Analysis
-- **Sentiment Classification**: Analyzes text to determine positive, neutral, or negative sentiment
-- **Polarity Scoring**: Numerical representation of sentiment (-1 to +1)
-- **Subjectivity Analysis**: Measures how subjective or objective each opinion is
-- **Keyword Extraction**: Identifies key topics and themes in feedback
-- **Time-series Analysis**: Tracks sentiment changes over configurable time periods
+- **Sentiment Classification**
+- Numerical representation of sentiment (-1 to +1)
+- Measures how subjective or objective each opinion is
+- Identifies key topics and themes in feedback
+- Tracks sentiment changes over configurable time periods
 
 ### Visualization Components
-- **Sentiment Breakdown Charts**: Distribution of sentiment by candidate or source
-- **Time Series Visualizations**: Sentiment trends over customizable intervals
-- **Polarity Distribution**: Violin plots showing polarity distribution patterns
-- **Keyword Charts**: Frequency analysis of important terms
-- **Sunburst Charts**: Hierarchical visualization of data relationships
-- **Scatter Plots**: Subjectivity vs. polarity analysis
+- **Sentiment Breakdown Charts**
+- **Time Series Visualizations**
+- **Polarity Distribution**
+- **Keyword Charts**
+- **Sunburst Charts**
+- **Scatter Plots**
 
 ### Interactive UI
-- **Responsive Design**: Adapts to different screen sizes
-- **Dark Mode**: Reduces eye strain during extended analysis sessions
-- **Tab-based Navigation**: Organizes insights by analysis type
-- **Dynamic Filtering**: Real-time data filtering based on user selections
-- **Interactive Controls**: Dropdowns, checklists, and radio buttons for customization
-- **Hover Details**: Rich tooltips providing additional context
-- **AI-generated Explanations**: Natural language descriptions of visualization insights
+- **Responsive Design**
+- **Dark Mode**
+- **Tab-based Navigation**
+- Real-time data filtering based on user selections
+- Dropdowns, checklists, and radio buttons for customization
+- **Hover Details**
+- **AI-generated Explanations** to some chart/grraph
 
-## Where the Data Comes From
 
-MindThePolls can analyze student election sentiment from multiple sources:
-
-### Supported Data Sources
-1. **Student Surveys**: Structured feedback collected through institutional surveys
-2. **Social Media**: Comments and posts from platforms like Twitter, Facebook, and Instagram
-3. **Campus Forums**: Discussions from online student forums and discussion boards
-4. **Direct Feedback**: Comments collected through suggestion boxes or email campaigns
-5. **Focus Groups**: Transcribed discussions from student focus groups
-6. **Campaign Events**: Feedback collected during candidate debates or presentations
 
 ### Data Import and Processing
 - Users can import data via CSV files containing feedback text, candidate names, dates, and sources
@@ -136,7 +126,7 @@ MindThePolls can analyze student election sentiment from multiple sources:
 - Keywords are extracted using frequency analysis and importance scoring
 
 ### Sample Data
-The repository includes `sample_election_feedback.csv` with synthetic data representing realistic student feedback. This allows users to explore the application's capabilities before importing their own data.
+The repository includes `sample_election_feedback.csv` with data representing realistic student feedback. This allows users to explore the application's capabilities before importing their own data.
 
 ## Dashboard Sections
 
@@ -288,16 +278,9 @@ To analyze your own election feedback data:
 Planned improvements include:
 
 - Machine learning models for more accurate sentiment classification
-- Emotion detection beyond basic sentiment analysis
-- Topic modeling using LDA (Latent Dirichlet Allocation)
-- Real-time social media integration
-- Export capabilities for reports and presentations
-- Comparative analysis across multiple elections
+- Add AI feature, explaining each graph or chart
 
 ## Contributors and Acknowledgments
 
-This project was developed to provide educational institutions with better insights into student election sentiment. Special thanks to the open-source community and the developers of the libraries that make this project possible.
+--- selfproj
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details. 
