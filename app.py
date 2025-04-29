@@ -1,3 +1,15 @@
+#to do
+#clean code
+#fix linter errors
+#each graph - ai explanation
+#sentiment analysis - ai explanation
+#wordcloud - ai explanation
+#time series - ai explanation
+#source breakdown - ai explanation
+#candidate sentiment breakdown - ai explanation
+#candidate polarity distribution - ai explanation   
+#feature to add- csv import export
+
 import dash
 from dash import dcc, html, callback, Input, Output, State
 import plotly.express as px
@@ -74,6 +86,11 @@ app.layout = html.Div([
         html.Div(id='most-positive-source-text', style={'display': 'none'}),
         html.Div(id='most-negative-source-text', style={'display': 'none'}),
         
+        html.Div(id='candidate-sentiment-breakdown', style={'display': 'none'}),
+        html.Div(id='candidate-polarity-distribution', style={'display': 'none'}),
+        html.Div(id='sentiment-time-series', style={'display': 'none'}),
+        html.Div(id='candidate-time-series', style={'display': 'none'}),
+        html.Div(id='candidate-dropdown', style={'display': 'none'}),
 
         html.Div([
             dcc.Checklist(id='candidate-checklist', options=[], value=[], style={'display': 'none'}),
@@ -377,8 +394,8 @@ def render_content(tab):
                     )
                 ], className='control-container'),
                 
-                dcc.Graph(id='candidate-sentiment-breakdown', config={'displayModeBar': False}),
-                dcc.Graph(id='candidate-polarity-distribution', config={'displayModeBar': False})
+                html.Div(dcc.Graph(id='candidate-sentiment-breakdown', config={'displayModeBar': False})),
+                html.Div(dcc.Graph(id='candidate-polarity-distribution', config={'displayModeBar': False}))
             ], className='card'),
             
             html.Div([
@@ -408,12 +425,12 @@ def render_content(tab):
                     )
                 ], className='control-container'),
                 
-                dcc.Graph(id='sentiment-time-series')
+                html.Div(dcc.Graph(id='sentiment-time-series'))
             ], className='card'),
             
             html.Div([
                 html.H2("Candidate Sentiment Over Time", className='card-title'),
-                dcc.Graph(id='candidate-time-series')
+                html.Div(dcc.Graph(id='candidate-time-series'))
             ], className='card')
         ])
     
@@ -422,7 +439,7 @@ def render_content(tab):
             html.Div([
                 html.H2("Source Comparison Overview", className='card-title'),
                 html.P("This visualization shows how sentiment is distributed across different feedback sources.", className="card-description"),
-                dcc.Graph(id='source-comparison-overview')
+                html.Div(dcc.Graph(id='source-comparison-overview'))
             ], className='card'),
             
             html.Div([
@@ -439,7 +456,7 @@ def render_content(tab):
                     )
                 ], className='control-container'),
                 
-                dcc.Graph(id='source-candidate-breakdown')
+                html.Div(dcc.Graph(id='source-candidate-breakdown'))
             ], className='card'),
             
             html.Div([
@@ -467,7 +484,7 @@ def render_content(tab):
             html.Div([
                 html.Div([
                     html.Label("Select Candidate:", className="input-label"),
-                    dcc.Dropdown(
+                    html.Div(dcc.Dropdown(
                         id='candidate-dropdown',
                         options=[],
                         value=None,
@@ -475,7 +492,7 @@ def render_content(tab):
                         searchable=True,
                         placeholder="Select a candidate or view all",
                         className='dropdown'
-                    )
+                    ))
                 ], className="filter-group")
             ], className="filters-container"),
             html.Div(id='advanced-content', className='tab-content')
@@ -607,6 +624,8 @@ def update_candidate_time_series(time_interval, tab_value):
     [Input('source-candidate-dropdown', 'value'),
      Input('dummy-div-source', 'children')]
 )
+
+
 def update_source_candidate_breakdown(selected_candidate, tab_value):
     if tab_value != 'tab-source':
         return go.Figure()
